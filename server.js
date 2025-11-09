@@ -6,7 +6,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const KEYS = {}; // Store keys with timestamps
+const KEYS = {}; // Stores keys with timestamps
 const KEY_EXPIRY_HOURS = 4;
 
 // Home route
@@ -41,7 +41,7 @@ app.get("/check_key", (req, res) => {
 });
 
 // Start server
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
